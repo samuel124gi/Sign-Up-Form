@@ -27,8 +27,8 @@ const Main = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<{
-    firsttext: String;
-    secondtext: String;
+    firstname: String;
+    secondname: String;
     email: string;
     password: string;
   }>({
@@ -63,29 +63,29 @@ const Main = () => {
               <Input
                 type="text"
                 placeholder="First Name"
-                {...register("firsttext", {
+                {...register("firstname", {
                   required: { value: true, message: "This field is required" },
                 })}
               />
               <ErrorContainer>
-                {errors.firsttext && <ErrorIcon />}
+                {errors.firstname && <ErrorIcon />}
               </ErrorContainer>
 
-              <Error>{errors.firsttext?.message}</Error>
+              <Error>{errors.firstname?.message}</Error>
             </Label>{" "}
             <Label>
               <Input
                 type="text"
                 placeholder="Last Name"
-                {...register("secondtext", {
+                {...register("secondname", {
                   required: { value: true, message: "This field is required" },
                 })}
               />
               <ErrorContainer>
-                {errors.secondtext && <ErrorIcon />}
+                {errors.secondname && <ErrorIcon />}
               </ErrorContainer>
 
-              <Error>{errors.secondtext?.message}</Error>
+              <Error>{errors.secondname?.message}</Error>
             </Label>
             <Label>
               <Input
